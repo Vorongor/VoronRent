@@ -1,4 +1,4 @@
-import style from './App.module.css';
+// import style from './App.module.css';
 import { Rings } from 'react-loader-spinner';
 import React, { Suspense, lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';

@@ -1,48 +1,48 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import CatalogItem from "./CatalogItem";
-import { fetchCarData } from "../redux/operation";
-import style from "./App.module.css";
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import CatalogItem from './CatalogItem';
+import { fetchCarData } from '../redux/operation';
+import style from './App.module.css';
 
 function Ctalog() {
   const dispatch = useDispatch();
-  const [selectedOption, setSelectedOption] = useState("");
+  const [selectedOption, setSelectedOption] = useState('');
 
   const options = [
-    "Buick",
-    "Volvo",
-    "HUMMER",
-    "Subaru",
-    "Mitsubishi",
-    "Nissan",
-    "Lincoln",
-    "GMC",
-    "Hyundai",
-    "MINI",
-    "Bentley",
-    "Mercedes-Benz",
-    "Aston Martin",
-    "Pontiac",
-    "Lamborghini",
-    "Audi",
-    "BMW",
-    "Chevrolet",
-    "Mercedes-Benz",
-    "Chrysler",
-    "Kia",
-    "Land",
+    'Buick',
+    'Volvo',
+    'HUMMER',
+    'Subaru',
+    'Mitsubishi',
+    'Nissan',
+    'Lincoln',
+    'GMC',
+    'Hyundai',
+    'MINI',
+    'Bentley',
+    'Mercedes-Benz',
+    'Aston Martin',
+    'Pontiac',
+    'Lamborghini',
+    'Audi',
+    'BMW',
+    'Chevrolet',
+    'Mercedes-Benz',
+    'Chrysler',
+    'Kia',
+    'Land',
   ];
 
   useEffect(() => {
     dispatch(fetchCarData());
-  }, []);
+  }, [dispatch]);
 
-  const handleOptionChange = (e) => {
+  const handleOptionChange = e => {
     setSelectedOption(e.target.value);
   };
-  const carData = useSelector((state) => state.car.carData);
+  const carData = useSelector(state => state.car.carData);
 
-  const prises = carData.map((item) => item.rentalPrice);
+  const prises = carData.map(item => item.rentalPrice);
 
   function filterAndSortPrices(prices) {
     const uniquePrices = Array.from(new Set(prices));
@@ -98,7 +98,7 @@ function Ctalog() {
         </label>
         <label className={style.labelKm}>
           Car mileage / km
-          <div style={{ display: "flex" }}>
+          <div style={{ display: 'flex' }}>
             <input className={style.kmSelect} type="text" placeholder="From " />
             <input className={style.kmSelect} type="text" placeholder="To" />
           </div>

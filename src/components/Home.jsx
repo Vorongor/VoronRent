@@ -1,16 +1,16 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchCarData } from "../redux/operation";
-import TopCarItem from "./TopCarItem";
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchCarData } from '../redux/operation';
+import TopCarItem from './TopCarItem';
 
 function Home() {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchCarData());
-  }, []);
+  }, [dispatch]);
 
-  const carData = useSelector((state) => state.car.carData);
+  const carData = useSelector(state => state.car.carData);
 
   const topData = [carData[13], carData[15], carData[19]];
   return (
