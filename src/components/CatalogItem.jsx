@@ -1,26 +1,55 @@
-import React from "react";
-import style from "./App.module.css";
+import React from 'react';
+import style from './App.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { removeFavorite, setFavorite } from 'redux/slice';
+import IconHeart from './SVG/EmptyHert';
+import IconHeartFull from './SVG/FullHeart';
 
 function CatalogItem({ car }) {
+  const dispatch = useDispatch();
   function handleButton(car) {
     console.log(car);
   }
 
-  const getAddress = (string) => {
+  const getAddress = string => {
     let address;
-    address = string.split(",");
+    address = string.split(',');
     address = address.slice(1);
     return address;
   };
 
+  function handleLike(id) {
+    dispatch(setFavorite(id));
+  }
+  function handleDislike(id) {
+    dispatch(removeFavorite(id));
+  }
+
+  const favoriteCars = useSelector(state => state.car.favoriteCars);
+
   return (
     <div className={style.carCard}>
-      <button className={style.heart}>heart</button>
+      {favoriteCars.includes(car.id) ? (
+        <button
+          className={style.heart}
+          type="button"
+          onClick={() => handleDislike(car.id)}
+        >
+          <IconHeartFull />
+        </button>
+      ) : (
+        <button
+          className={style.heart}
+          type="button"
+          onClick={() => handleLike(car.id)}
+        >
+          <IconHeart />
+        </button>
+      )}
       <img className={style.itemImg} src={car.img} alt={car.description} />
       <div className={style.topBox}>
         <p className={style.topText}>
-          {car.make}, <span className={style.blue}>{car.model}</span>,{" "}
-          {car.year}
+          {car.make}, <span className={style.blue}>{car.model}</span>,{car.year}
         </p>
         <p>{car.rentalPrice}</p>
       </div>

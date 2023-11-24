@@ -1,15 +1,15 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { fetchCarData } from "./operation";
+import { createSlice } from '@reduxjs/toolkit';
+import { fetchCarData } from './operation';
 
 const initialState = {
   carData: [],
   error: null,
   isLoading: false,
-  filter: "",
-  //   filtredCarData: [],
+  filter: '',
+  favoriteCars: [],
 };
 
-const handlePending = (state) => {
+const handlePending = state => {
   state.isLoading = true;
 };
 
@@ -19,7 +19,7 @@ const handleRejected = (state, action) => {
 };
 
 export const carSlice = createSlice({
-  name: "car",
+  name: 'car',
   initialState,
 
   reducers: {
@@ -27,11 +27,19 @@ export const carSlice = createSlice({
       state.filter = action.payload;
     },
     clearFilter(state) {
-      state.filter = "";
+      state.filter = '';
+    },
+    setFavorite(state, action) {
+      state.favoriteCars = [...state.favoriteCars, action.payload];
+    },
+    removeFavorite(state, action) {
+      state.favoriteCars = state.favoriteCars.filter(
+        car => car !== action.payload
+      );
     },
   },
 
-  extraReducers: (builder) => {
+  extraReducers: builder => {
     builder
       .addCase(fetchCarData.pending, handlePending)
       .addCase(fetchCarData.fulfilled, (state, action) => {
@@ -44,4 +52,5 @@ export const carSlice = createSlice({
 });
 
 export const carReduser = carSlice.reducer;
-export const { filterCars, clearFilter } = carSlice.actions;
+export const { filterCars, clearFilter, setFavorite, removeFavorite } =
+  carSlice.actions;
