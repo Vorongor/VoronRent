@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap");
+
+/* =========Header============ */
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #3470ff;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #fff;
+  font-family: "Manrope";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  text-decoration: none;
+}
+.carIcon,
+.homeIcon {
+  scale: 2.2;
+}
+.menu {
+  display: flex;
+  gap: 20px;
+}
+.link {
+  box-sizing: border-box;
+  width: 92px;
+  height: 36px;
+  color: #f3f3f2;
+  border: none;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  padding: 8px;
+  font-family: "Manrope";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+  transition: all 250ms ease-in-out;
+}
+.link:hover,
+.link:focus {
+  background-color: #f3f3f2;
+  color: #3470ff;
+  scale: 1.1;
+}
+.activeLink {
+  box-sizing: border-box;
+  width: 92px;
+  height: 36px;
+  color: #3470ff;
+  background-color: #f3f3f2;
+  border: none;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  padding: 8px;
+  font-family: "Manrope";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+}
+/* =========catalog =========== */
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 18px;
+  margin: 50px;
+}
+.labelKm,
+.labelMark,
+.labelPrise {
+  display: flex;
+  flex-direction: column;
+  color: #8a8a89;
+  font-family: "Manrope";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  gap: 8px;
+}
+.labelMark {
+  width: 224px;
+}
+.labelPrise {
+  width: 125px;
+}
+.labelKm {
+  width: 320px;
+}
+.markSelect,
+.priseSelect {
+  height: 48px;
+  box-sizing: border-box;
+  padding: 8px;
+  border-radius: 14px;
+  background: #f7f7fb;
+  border: none;
+}
+.kmSelect {
+  width: 160px;
+  height: 48px;
+  box-sizing: border-box;
+  padding: 8px;
+  border-radius: 14px;
+  background: #f7f7fb;
+  border: none;
+}
+.search {
+  border: none;
+  width: 136px;
+  height: 48px;
+  border-radius: 12px;
+  background: #3470ff;
+  color: #fff;
+}
+.catalogList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 29px;
+}
+/* =========card========= */
+.carCard {
+  position: relative;
+  display: flex;
+  width: 274px;
+  height: 460px;
+  flex-direction: column;
+  align-items: center;
+}
+.heart {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.itemImg {
+  text-align: center;
+  width: 274px;
+  height: 268px;
+  border-radius: 14px;
+  background: linear-gradient(
+      180deg,
+      rgba(18, 20, 23, 0.5) 2.5%,
+      rgba(18, 20, 23, 0) 41.07%
+    ),
+    #f3f3f2;
+}
+.topBox {
+  padding: 12px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.topText {
+  color: #121417;
+  font-family: "Manrope";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
+.blue {
+  color: #3470ff;
+}
+.botBox {
+  color: rgba(18, 20, 23, 0.5);
+  font-family: "Manrope";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.botTip {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 0 8px;
+  border-right: 1px solid #1214171a;
+}
+.botBox:last-child.botTip {
+  border-right: none;
+}
+.rentBtn {
+  margin-top: 28px;
+  width: 274px;
+  height: 44px;
+  border-radius: 12px;
+  color: #fff;
+  background: #3470ff;
+  border: none;
+}
