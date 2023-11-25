@@ -3,10 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import CatalogItem from './CatalogItem';
 import { fetchCarData } from '../redux/operation';
 import style from './App.module.css';
+import PopUp from './PopUp';
 
 function Ctalog() {
   const dispatch = useDispatch();
   const [selectedOption, setSelectedOption] = useState('');
+  const [selectedCar, setSelectedCar] = useState(null);
 
   const options = [
     'Buick',
@@ -55,6 +57,13 @@ function Ctalog() {
     });
 
     return sortedPrices;
+  }
+  function handleClosePopUp() {
+    setSelectedCar(null);
+  }
+
+  function handleChoose(car) {
+    setSelectedCar(car);
   }
 
   return (
@@ -111,10 +120,13 @@ function Ctalog() {
       {carData.length > 0 && (
         <ul className={style.catalogList}>
           {carData.map((item, index) => {
-            return <CatalogItem key={index} car={item} />;
+            return (
+              <CatalogItem key={index} car={item} chooseCar={handleChoose} />
+            );
           })}
         </ul>
       )}
+      {selectedCar && <PopUp car={selectedCar} closeFunc={handleClosePopUp} />}
     </div>
   );
 }

@@ -5,11 +5,8 @@ import { removeFavorite, setFavorite } from 'redux/slice';
 import IconHeart from './SVG/EmptyHert';
 import IconHeartFull from './SVG/FullHeart';
 
-function CatalogItem({ car }) {
+function CatalogItem({ car, chooseCar }) {
   const dispatch = useDispatch();
-  function handleButton(car) {
-    console.log(car);
-  }
 
   const getAddress = string => {
     let address;
@@ -65,7 +62,7 @@ function CatalogItem({ car }) {
       <button
         className={style.rentBtn}
         type="button"
-        onClick={() => handleButton(car)}
+        onClick={() => chooseCar(car)}
       >
         Learn more
       </button>
