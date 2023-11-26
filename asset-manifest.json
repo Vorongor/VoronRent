@@ -1,27 +1,30 @@
 {
   "files": {
     "main.css": "/VoronRent/static/css/main.e574052f.css",
-    "main.js": "/VoronRent/static/js/main.f014f6f1.js",
-    "static/css/228.e9eebb76.chunk.css": "/VoronRent/static/css/228.e9eebb76.chunk.css",
-    "static/js/228.e3dcd221.chunk.js": "/VoronRent/static/js/228.e3dcd221.chunk.js",
-    "static/js/494.f5e58320.chunk.js": "/VoronRent/static/js/494.f5e58320.chunk.js",
-    "static/css/997.e9eebb76.chunk.css": "/VoronRent/static/css/997.e9eebb76.chunk.css",
-    "static/js/997.acc2844e.chunk.js": "/VoronRent/static/js/997.acc2844e.chunk.js",
-    "static/css/964.e9eebb76.chunk.css": "/VoronRent/static/css/964.e9eebb76.chunk.css",
-    "static/js/964.d9823e8d.chunk.js": "/VoronRent/static/js/964.d9823e8d.chunk.js",
+    "main.js": "/VoronRent/static/js/main.ea09c657.js",
+    "static/css/228.abd53730.chunk.css": "/VoronRent/static/css/228.abd53730.chunk.css",
+    "static/js/228.52ae65ad.chunk.js": "/VoronRent/static/js/228.52ae65ad.chunk.js",
+    "static/css/494.abd53730.chunk.css": "/VoronRent/static/css/494.abd53730.chunk.css",
+    "static/js/494.eb55860a.chunk.js": "/VoronRent/static/js/494.eb55860a.chunk.js",
+    "static/css/997.abd53730.chunk.css": "/VoronRent/static/css/997.abd53730.chunk.css",
+    "static/js/997.264e2934.chunk.js": "/VoronRent/static/js/997.264e2934.chunk.js",
+    "static/css/964.abd53730.chunk.css": "/VoronRent/static/css/964.abd53730.chunk.css",
+    "static/js/964.5b16e30b.chunk.js": "/VoronRent/static/js/964.5b16e30b.chunk.js",
+    "static/media/pngtree-white-background-with-blue-abstract-smoke-on-top-image_312166.jpg": "/VoronRent/static/media/pngtree-white-background-with-blue-abstract-smoke-on-top-image_312166.fc23ca5df2cd4e34b52a.jpg",
     "index.html": "/VoronRent/index.html",
     "main.e574052f.css.map": "/VoronRent/static/css/main.e574052f.css.map",
-    "main.f014f6f1.js.map": "/VoronRent/static/js/main.f014f6f1.js.map",
-    "228.e9eebb76.chunk.css.map": "/VoronRent/static/css/228.e9eebb76.chunk.css.map",
-    "228.e3dcd221.chunk.js.map": "/VoronRent/static/js/228.e3dcd221.chunk.js.map",
-    "494.f5e58320.chunk.js.map": "/VoronRent/static/js/494.f5e58320.chunk.js.map",
-    "997.e9eebb76.chunk.css.map": "/VoronRent/static/css/997.e9eebb76.chunk.css.map",
-    "997.acc2844e.chunk.js.map": "/VoronRent/static/js/997.acc2844e.chunk.js.map",
-    "964.e9eebb76.chunk.css.map": "/VoronRent/static/css/964.e9eebb76.chunk.css.map",
-    "964.d9823e8d.chunk.js.map": "/VoronRent/static/js/964.d9823e8d.chunk.js.map"
+    "main.ea09c657.js.map": "/VoronRent/static/js/main.ea09c657.js.map",
+    "228.abd53730.chunk.css.map": "/VoronRent/static/css/228.abd53730.chunk.css.map",
+    "228.52ae65ad.chunk.js.map": "/VoronRent/static/js/228.52ae65ad.chunk.js.map",
+    "494.abd53730.chunk.css.map": "/VoronRent/static/css/494.abd53730.chunk.css.map",
+    "494.eb55860a.chunk.js.map": "/VoronRent/static/js/494.eb55860a.chunk.js.map",
+    "997.abd53730.chunk.css.map": "/VoronRent/static/css/997.abd53730.chunk.css.map",
+    "997.264e2934.chunk.js.map": "/VoronRent/static/js/997.264e2934.chunk.js.map",
+    "964.abd53730.chunk.css.map": "/VoronRent/static/css/964.abd53730.chunk.css.map",
+    "964.5b16e30b.chunk.js.map": "/VoronRent/static/js/964.5b16e30b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e574052f.css",
-    "static/js/main.f014f6f1.js"
+    "static/js/main.ea09c657.js"
   ]
 }
