@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import style from './App.module.css';
 
 function TopCarItem({ car }) {
   function handleButton(car) {
@@ -6,26 +7,21 @@ function TopCarItem({ car }) {
   }
 
   return (
-    <div>
-      <img
-        style={{ width: 360, height: 240 }}
-        src={car.img}
-        alt={car.description}
-      />
-      <div>
-        <p>
-          {car.make}, {car.model}
-        </p>
-        <p>{car.rentalPrice}</p>
+    <div className={style.topCard}>
+      <div className={style.imgTopBox}>
+        <img className={style.topImg} src={car.img} alt={car.description} />
+        <p className={style.topPrice}>{car.rentalPrice}</p>
       </div>
-      <p>{car.address}</p>
-      <p>{car.rentalCompany}</p>
-      <p>{car.accessories}</p>
-      <p>{car.functionalities}</p>
-      <p>{car.id}</p>
-      <button type="button" onClick={() => handleButton(car)}>
-        Rent this Car
-      </button>
+      <div>
+        <p>{car.address}</p>
+        <p>{car.rentalCompany}</p>
+        <p>{car.accessories}</p>
+        <p>{car.functionalities}</p>
+        <p>{car.id}</p>
+        <button type="button" onClick={() => handleButton(car)}>
+          Rent this Car
+        </button>
+      </div>
     </div>
   );
 }

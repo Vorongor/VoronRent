@@ -1,10 +1,10 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
-import Header from "./Header";
-
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import Header from './Header';
+import style from './App.module.css';
 function Layout() {
   return (
-    <div style={{ width: "100%" }}>
+    <div className={style.backGround}>
       <Header />
       <Outlet />
     </div>

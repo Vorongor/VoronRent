@@ -18,8 +18,8 @@ function Favorite() {
     setSelectedCar(car);
   }
   return (
-    <div>
-      <h2>Favorite</h2>
+    <div className={style.favoriteDrop}>
+      <h2 className={style.title}>Favorite</h2>
       <ul className={style.catalogList}>
         {favoriteCarsData.map((car, index) => {
           return <CatalogItem key={index} car={car} chooseCar={handleChoose} />;

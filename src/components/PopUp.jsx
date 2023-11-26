@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './App.module.css';
+import IconCloseCircle from './SVG/CloseSvg';
 // import { useDispatch } from 'react-redux';
 
 function PopUp({ car, closeFunc }) {
@@ -39,7 +40,7 @@ function PopUp({ car, closeFunc }) {
     <div className={style.backDrop}>
       <div className={style.modalWindow}>
         <button onClick={closeFunc} type="button" className={style.close}>
-          X
+          <IconCloseCircle />
         </button>
         <img className={style.popImg} src={car.img} alt={car.description} />
         <div className={style.topBox}>
