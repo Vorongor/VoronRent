@@ -45,7 +45,7 @@ export const carSlice = createSlice({
       .addCase(fetchCarData.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.carData = action.payload;
+        state.carData = action.payload.data;
       })
       .addCase(fetchCarData.rejected, handleRejected);
   },

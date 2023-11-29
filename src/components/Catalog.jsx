@@ -43,6 +43,7 @@ function Ctalog() {
     setSelectedOption(e.target.value);
   };
   const carData = useSelector(state => state.car.carData);
+  console.log('🚀 ~ file: Catalog.jsx:46 ~ Ctalog ~ carData:', carData);
 
   const prises = carData.map(item => item.rentalPrice);
 
