@@ -13,16 +13,22 @@ function Home() {
 
   const carData = useSelector(state => state.car.carData);
 
-  const topData = [carData[13], carData[15], carData[19]];
+  const topData = [carData[0], carData[1], carData[2]];
   return (
     <div>
-      <h2 className={style.title}>Top Car of Week</h2>
-      {carData.length > 0 && (
-        <ul>
-          {topData.map((item, index) => {
-            return <TopCarItem key={index} car={item} />;
-          })}
-        </ul>
+      {carData.length > 0 ? (
+        <div>
+          <h2 className={style.title}>Top Car of Week</h2>
+          {carData.length > 0 && (
+            <ul>
+              {topData.map((item, index) => {
+                return <TopCarItem key={index} car={item} />;
+              })}
+            </ul>
+          )}
+        </div>
+      ) : (
+        <div>Loading</div>
       )}
     </div>
   );

@@ -5,11 +5,10 @@ axios.defaults.baseURL = 'https://voronrentrest.onrender.com';
 
 export const fetchCarData = createAsyncThunk(
   'cars/fetchAll',
-  async (_, thunkAPI) => {
+  async (page, thunkAPI) => {
     try {
-      const res = await axios.get('/car');
-      console.log('🚀 ~ file: operation.js:11 ~ res:', res);
-      return res.data;
+      const res = await axios.get(`/car?page=${page}`);
+      return res.data.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

@@ -7,8 +7,15 @@ import PopUp from './PopUp';
 
 function Ctalog() {
   const dispatch = useDispatch();
+
+  const fetchedData = useSelector(state => state.car.carData);
+  console.log('🚀 ~ file: Catalog.jsx:12 ~ Ctalog ~ fetchedData:', fetchedData);
+  const [carData, setCarData] = useState(fetchedData);
+
   const [selectedOption, setSelectedOption] = useState('');
+  const [selectedPrice, setSelectedPrice] = useState('');
   const [selectedCar, setSelectedCar] = useState(null);
+  const [page, setPage] = useState(1);
 
   const options = [
     'Buick',
@@ -36,14 +43,12 @@ function Ctalog() {
   ];
 
   useEffect(() => {
-    dispatch(fetchCarData());
-  }, [dispatch]);
+    dispatch(fetchCarData(page));
+  }, [dispatch, page]);
 
   const handleOptionChange = e => {
     setSelectedOption(e.target.value);
   };
-  const carData = useSelector(state => state.car.carData);
-  console.log('🚀 ~ file: Catalog.jsx:46 ~ Ctalog ~ carData:', carData);
 
   const prises = carData.map(item => item.rentalPrice);
 
@@ -65,6 +70,19 @@ function Ctalog() {
 
   function handleChoose(car) {
     setSelectedCar(car);
+  }
+
+  function handleLoadMore() {
+    const nextPage = page + 1;
+
+    dispatch(fetchCarData(nextPage))
+      .then(data => {
+        setPage(nextPage);
+        setCarData(fetchedData);
+      })
+      .catch(error => {
+        console.error('Error loading more data:', error);
+      });
   }
 
   return (
@@ -93,8 +111,8 @@ function Ctalog() {
           <select
             className={style.priseSelect}
             id="prise"
-            value={selectedOption}
-            onChange={handleOptionChange}
+            value={selectedPrice}
+            onChange={e => setSelectedPrice(e.target.value)}
           >
             <option value="" disabled>
               To $
@@ -127,6 +145,11 @@ function Ctalog() {
           })}
         </ul>
       )}
+
+      <button type="button" onClick={handleLoadMore} disabled={page > 4}>
+        Load More
+      </button>
+
       {selectedCar && <PopUp car={selectedCar} closeFunc={handleClosePopUp} />}
     </div>
   );
