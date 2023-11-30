@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap');
 
 .backGround {
+  text-align: center;
   width: 100vw;
   height: 100vh;
   background: linear-gradient(0deg, #ffffff93, #8a8a8993),
@@ -57,6 +58,7 @@
 }
 .link:hover,
 .link:focus {
+  cursor: pointer;
   background-color: #f3f3f2;
   color: #3470ff;
   scale: 1.1;
@@ -154,6 +156,32 @@
   align-items: center;
   gap: 29px;
 }
+.loadMore {
+  margin: 20px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: #3470ff;
+  font-family: 'Manrope';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  text-decoration-line: underline;
+}
+.loadMoreDisable {
+  margin: 20px;
+  cursor: not-allowed;
+  border: none;
+  background-color: transparent;
+  color: #8a8a89;
+  font-family: 'Manrope';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  text-decoration-line: underline;
+}
 /* =========card========= */
 .carCard {
   position: relative;
@@ -173,6 +201,7 @@
   transition: all 250ms ease-in-out;
 }
 .heart:hover {
+  cursor: pointer;
   scale: 1.2;
 }
 .itemImg {
@@ -239,6 +268,7 @@
   transition: all 250ms ease-in-out;
 }
 .rentBtn:hover {
+  cursor: pointer;
   background-color: #0b44cd;
 }
 /* =============popup================== */
@@ -278,6 +308,7 @@
   transition: all 250ms ease-in-out;
 }
 .close:hover {
+  cursor: pointer;
   scale: 1.2;
   color: #0b44cd;
 }

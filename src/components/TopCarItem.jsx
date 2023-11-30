@@ -10,7 +10,7 @@ function TopCarItem({ car }) {
     <div className={style.topCard}>
       <div className={style.imgTopBox}>
         <img className={style.topImg} src={car.img} alt={car.description} />
-        <p className={style.topPrice}>{car.rentalPrice}</p>
+        <p className={style.topPrice}>${car.rentalPrice}</p>
       </div>
       <div>
         <p>{car.address}</p>

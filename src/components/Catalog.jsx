@@ -8,39 +8,15 @@ import PopUp from './PopUp';
 function Ctalog() {
   const dispatch = useDispatch();
 
-  const fetchedData = useSelector(state => state.car.carData);
-  console.log('🚀 ~ file: Catalog.jsx:12 ~ Ctalog ~ fetchedData:', fetchedData);
-  const [carData, setCarData] = useState(fetchedData);
+  const carData = useSelector(state => state.car.carData);
+  const maxSize = useSelector(state => state.car.maxSize);
 
   const [selectedOption, setSelectedOption] = useState('');
   const [selectedPrice, setSelectedPrice] = useState('');
+  const [milageFrom, setMilageFrom] = useState('');
+  const [milageTo, setMilageTo] = useState('');
   const [selectedCar, setSelectedCar] = useState(null);
   const [page, setPage] = useState(1);
-
-  const options = [
-    'Buick',
-    'Volvo',
-    'HUMMER',
-    'Subaru',
-    'Mitsubishi',
-    'Nissan',
-    'Lincoln',
-    'GMC',
-    'Hyundai',
-    'MINI',
-    'Bentley',
-    'Mercedes-Benz',
-    'Aston Martin',
-    'Pontiac',
-    'Lamborghini',
-    'Audi',
-    'BMW',
-    'Chevrolet',
-    'Mercedes-Benz',
-    'Chrysler',
-    'Kia',
-    'Land',
-  ];
 
   useEffect(() => {
     dispatch(fetchCarData(page));
@@ -50,20 +26,22 @@ function Ctalog() {
     setSelectedOption(e.target.value);
   };
 
-  const prises = carData.map(item => item.rentalPrice);
+  const prises = useSelector(state => state.car.prices);
+  const makes = useSelector(state => state.car.makes);
 
   function filterAndSortPrices(prices) {
     const uniquePrices = Array.from(new Set(prices));
 
     const sortedPrices = uniquePrices.sort((a, b) => {
-      const priceA = Number(a.slice(1));
-      const priceB = Number(b.slice(1));
+      const priceA = Number(a);
+      const priceB = Number(b);
 
       return priceA - priceB;
     });
 
     return sortedPrices;
   }
+
   function handleClosePopUp() {
     setSelectedCar(null);
   }
@@ -78,16 +56,33 @@ function Ctalog() {
     dispatch(fetchCarData(nextPage))
       .then(data => {
         setPage(nextPage);
-        setCarData(fetchedData);
       })
       .catch(error => {
         console.error('Error loading more data:', error);
       });
   }
 
+  function handleSerch(e) {
+    e.preventDefault();
+    const query = {};
+    if (selectedOption) {
+      query.make = selectedOption;
+    }
+    if (selectedPrice) {
+      query.rentalPrice = selectedPrice;
+    }
+    if (milageFrom) {
+      query.milageFrom = milageFrom;
+    }
+    if (milageTo) {
+      query.milageTo = milageTo;
+    }
+    console.log(query);
+  }
+
   return (
     <div>
-      <form className={style.form} action="submit">
+      <form className={style.form} action="submit" onSubmit={handleSerch}>
         <label className={style.labelMark} htmlFor="dropdown">
           Car brand
           <select
@@ -99,7 +94,7 @@ function Ctalog() {
             <option value="" disabled>
               Enter the text
             </option>
-            {options.map((option, index) => (
+            {makes.map((option, index) => (
               <option key={index} value={option}>
                 {option}
               </option>
@@ -119,7 +114,7 @@ function Ctalog() {
             </option>
             {filterAndSortPrices(prises).map((option, index) => (
               <option key={index} value={option}>
-                {option}
+                ${option}
               </option>
             ))}
           </select>
@@ -127,8 +122,20 @@ function Ctalog() {
         <label className={style.labelKm}>
           Car mileage / km
           <div style={{ display: 'flex' }}>
-            <input className={style.kmSelect} type="text" placeholder="From " />
-            <input className={style.kmSelect} type="text" placeholder="To" />
+            <input
+              className={style.kmSelect}
+              type="text"
+              placeholder="From "
+              value={milageFrom}
+              onChange={e => setMilageFrom(e.target.value)}
+            />
+            <input
+              className={style.kmSelect}
+              type="text"
+              placeholder="To"
+              value={milageTo}
+              onChange={e => setMilageTo(e.target.value)}
+            />
           </div>
         </label>
         <button className={style.search} type="submit">
@@ -138,15 +145,20 @@ function Ctalog() {
 
       {carData.length > 0 && (
         <ul className={style.catalogList}>
-          {carData.map((item, index) => {
-            return (
-              <CatalogItem key={index} car={item} chooseCar={handleChoose} />
-            );
-          })}
+          {carData.map((item, index) => (
+            <CatalogItem key={index} car={item} chooseCar={handleChoose} />
+          ))}
         </ul>
       )}
 
-      <button type="button" onClick={handleLoadMore} disabled={page > 4}>
+      <button
+        className={
+          carData.length === maxSize ? style.loadMoreDisable : style.loadMore
+        }
+        type="button"
+        onClick={handleLoadMore}
+        disabled={carData.length === maxSize}
+      >
         Load More
       </button>
 

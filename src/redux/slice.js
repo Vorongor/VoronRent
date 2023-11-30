@@ -1,8 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchCarData } from './operation';
+import { act } from '@testing-library/react';
 
 const initialState = {
   carData: [],
+  makes: [],
+  prices: [],
+  maxSize: 12,
   error: null,
   isLoading: false,
   filter: '',
@@ -45,7 +49,10 @@ export const carSlice = createSlice({
       .addCase(fetchCarData.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.carData = action.payload;
+        state.carData = action.payload.data;
+        state.maxSize = action.payload.maxSize;
+        state.makes = action.payload.makes;
+        state.prices = action.payload.prices;
       })
       .addCase(fetchCarData.rejected, handleRejected);
   },

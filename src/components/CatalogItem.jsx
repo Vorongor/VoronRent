@@ -48,7 +48,7 @@ function CatalogItem({ car, chooseCar }) {
         <p className={style.topText}>
           {car.make}, <span className={style.blue}>{car.model}</span>,{car.year}
         </p>
-        <p>{car.rentalPrice}</p>
+        <p>${car.rentalPrice}</p>
       </div>
       <div className={style.botBox}>
         <p className={style.botTip}>{getAddress(car.address)[0]}</p>

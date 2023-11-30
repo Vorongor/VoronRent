@@ -8,7 +8,7 @@ export const fetchCarData = createAsyncThunk(
   async (page, thunkAPI) => {
     try {
       const res = await axios.get(`/car?page=${page}`);
-      return res.data.data;
+      return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
