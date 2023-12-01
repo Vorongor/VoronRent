@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import CatalogItem from './CatalogItem';
-import { fetchCarData } from '../redux/operation';
+import { fetchCarData, fetchSearchData } from '../redux/operation';
 import style from './App.module.css';
 import PopUp from './PopUp';
 
@@ -62,7 +62,7 @@ function Ctalog() {
       });
   }
 
-  function handleSerch(e) {
+  function handleSearch(e) {
     e.preventDefault();
     const query = {};
     if (selectedOption) {
@@ -77,12 +77,12 @@ function Ctalog() {
     if (milageTo) {
       query.milageTo = milageTo;
     }
-    console.log(query);
+    dispatch(fetchSearchData(query));
   }
 
   return (
     <div>
-      <form className={style.form} action="submit" onSubmit={handleSerch}>
+      <form className={style.form} action="submit" onSubmit={handleSearch}>
         <label className={style.labelMark} htmlFor="dropdown">
           Car brand
           <select

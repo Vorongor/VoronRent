@@ -2,6 +2,7 @@ import React from 'react';
 import style from './App.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeFavorite, setFavorite } from 'redux/slice';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import IconHeart from './SVG/EmptyHert';
 import IconHeartFull from './SVG/FullHeart';
 
@@ -30,7 +31,10 @@ function CatalogItem({ car, chooseCar }) {
         <button
           className={style.heart}
           type="button"
-          onClick={() => handleDislike(car.id)}
+          onClick={() => {
+            handleDislike(car.id);
+            Notify.warning(`${car.make}, ${car.model} remove from favorite`);
+          }}
         >
           <IconHeartFull />
         </button>
@@ -38,7 +42,10 @@ function CatalogItem({ car, chooseCar }) {
         <button
           className={style.heart}
           type="button"
-          onClick={() => handleLike(car.id)}
+          onClick={() => {
+            handleLike(car.id);
+            Notify.success(`${car.make}, ${car.model} added to favorite`);
+          }}
         >
           <IconHeart />
         </button>

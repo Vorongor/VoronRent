@@ -14,3 +14,16 @@ export const fetchCarData = createAsyncThunk(
     }
   }
 );
+
+export const fetchSearchData = createAsyncThunk(
+  'search/FetchSearch',
+  async (query, thunkAPI) => {
+    try {
+      const res = await axios.get('/car/search', { params: query });
+      console.log('🚀 ~ file: operation.js:25 ~ res:', res.data);
+      return res.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

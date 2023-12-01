@@ -4,10 +4,10 @@
   text-align: center;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(0deg, #ffffff93, #8a8a8993),
+  /* background: linear-gradient(0deg, #ffffff93, #8a8a8993),
     url('../image/pngtree-white-background-with-blue-abstract-smoke-on-top-image_312166.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
 }
 /* =========Header============ */
 .header {
@@ -83,14 +83,23 @@
 /* =========catalog =========== */
 
 .title {
+  margin: 20px;
   text-align: center;
   width: 100%;
-  color: #121417;
+  color: #0b44cd;
   font-family: 'Manrope';
   font-size: 46px;
   /* font-style: normal; */
   font-weight: 700;
   line-height: 1.2;
+}
+.listTopCar {
+  overflow: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
 .form {
@@ -278,6 +287,7 @@
   height: 100%;
   top: 0;
   left: 0;
+  z-index: 15;
   background-color: #12141776;
 }
 .modalWindow {
@@ -360,6 +370,39 @@
   line-height: 18px; /* 150% */
   letter-spacing: -0.24px;
 }
+
+.rentCompany {
+  list-style: none;
+  display: flex;
+  padding: 14px 21px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 35px;
+  background: #f9f9f9;
+  color: #363535;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: -0.24px;
+  transition: all 250ms ease-in-out;
+}
+
+.rentCompany:hover {
+  scale: 1.1;
+  background: #3470ff;
+  color: #f9f9f9;
+}
+
+.companyList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
 /* ==============Top Car Item============ */
 
 .topCard {
@@ -414,4 +457,145 @@
   font-weight: 700;
   line-height: 1.5;
   color: whitesmoke;
+}
+.topName {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 15;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5;
+  color: whitesmoke;
+}
+
+.calendarBox {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.calendarInput,
+.wayBtnBox {
+  width: 90%;
+  height: 40px;
+  border-radius: 20px;
+  padding: 8px;
+  box-sizing: border-box;
+  background-color: #ddd;
+  text-align: center;
+  font-size: 16px;
+  border: none;
+  transition: all 300ms ease-in-out;
+}
+.calendarInput:hover,
+.calendarInput:active {
+  border: none;
+  background-color: #3471ff5a;
+}
+.wayBtnBox {
+  background-color: transparent;
+  display: flex;
+  padding: 0;
+}
+.wayButton {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  border-radius: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.backButton {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  border-radius: 50%;
+  width: 10%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.calendarTumb {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.calendar {
+  flex: 1;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 12px;
+}
+.timePick {
+  border: none;
+  width: 100%;
+  height: 48px;
+  border-radius: 12px;
+  background: #3470ff;
+  color: #fff;
+  transition: all 250ms ease-in-out;
+}
+.timePick:hover {
+  background: #0b44cd;
+  color: #fff;
+}
+.timer {
+  margin-top: 6px;
+  display: flex;
+  min-width: 220px;
+  min-height: 42px;
+  padding: 7px 14px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 35px;
+  background: #f9f9f9;
+  color: #363535;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+.timerInput {
+  background-color: transparent;
+  border: none;
+  font-size: 22px;
+  font-weight: 500;
+  color: #3470ff;
+}
+.table {
+  width: 100%;
+  padding: 20px;
+}
+.infoTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+.infoTable tr {
+  text-align: center;
+}
+.infoTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.infoTable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.infoTable tr:hover {
+  background-color: #0b44cd;
+  color: #fff;
 }

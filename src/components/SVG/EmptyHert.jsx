@@ -5,7 +5,7 @@ function IconHeart(props) {
   return (
     <svg
       viewBox="0 0 1024 1024"
-      fill="#3470ff"
+      fill="#8a8a89"
       height="2.5em"
       width="2.5em"
       {...props}

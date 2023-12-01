@@ -24,7 +24,7 @@ function App() {
           <Rings
             height="100"
             width="100"
-            color="#e6533c"
+            color="#3470ff"
             ariaLabel="rings-loading"
             wrapperStyle={{
               display: 'flex',

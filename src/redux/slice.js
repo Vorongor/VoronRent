@@ -1,16 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchCarData } from './operation';
-import { act } from '@testing-library/react';
 
 const initialState = {
   carData: [],
   makes: [],
   prices: [],
+  favoriteCars: [],
   maxSize: 12,
-  error: null,
+  startTime: '',
+  finishTime: '',
+  rentalCompany: null,
   isLoading: false,
   filter: '',
-  favoriteCars: [],
+  error: null,
 };
 
 const handlePending = state => {
@@ -41,6 +43,12 @@ export const carSlice = createSlice({
         car => car !== action.payload
       );
     },
+    setStart(state, action) {
+      state.startTime = action.payload;
+    },
+    setFinish(state, action) {
+      state.finishTime = action.payload;
+    },
   },
 
   extraReducers: builder => {
@@ -53,11 +61,18 @@ export const carSlice = createSlice({
         state.maxSize = action.payload.maxSize;
         state.makes = action.payload.makes;
         state.prices = action.payload.prices;
+        state.rentalCompany = action.payload.rentalCompany;
       })
       .addCase(fetchCarData.rejected, handleRejected);
   },
 });
 
 export const carReduser = carSlice.reducer;
-export const { filterCars, clearFilter, setFavorite, removeFavorite } =
-  carSlice.actions;
+export const {
+  filterCars,
+  clearFilter,
+  setFavorite,
+  removeFavorite,
+  setStart,
+  setFinish,
+} = carSlice.actions;
