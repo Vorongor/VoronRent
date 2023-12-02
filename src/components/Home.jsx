@@ -10,6 +10,7 @@ import 'swiper/css/navigation';
 import style from './App.module.css';
 import homeStyle from './CssModules/Home.module.css';
 import PopUp from './PopUp';
+import { Link } from 'react-router-dom';
 
 function Home() {
   const dispatch = useDispatch();
@@ -56,12 +57,24 @@ function Home() {
     <div>
       <div className={homeStyle.introduce}>
         <h2 className={style.title}>Our services</h2>
-        <p>Daily rental of premium cars</p>
-        <p>daily rental of sports cars</p>
-        <p>daily rental of SUVs</p>
-        <p>daily business class car rental</p>
-        <p>Booking and renting a car without registration</p>
-        <p>10% discount on the first trip upon registration</p>
+        <Link to={'/catalog'} className={homeStyle.premium}>
+          Premium cars
+        </Link>
+        <Link to={'/catalog'} className={homeStyle.sport}>
+          Sports cars
+        </Link>
+        <Link to={'/catalog'} className={homeStyle.suv}>
+          SUVs
+        </Link>
+        <Link to={'/catalog'} className={homeStyle.buisnes}>
+          Business class car
+        </Link>
+        <Link to={'/catalog'} className={homeStyle.reserv}>
+          Booking and renting a car without registration
+        </Link>
+        <p className={homeStyle.auth}>
+          10% discount on the first trip upon registration
+        </p>
       </div>
       {carData.length > 0 ? (
         <div>

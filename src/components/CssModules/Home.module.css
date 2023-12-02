@@ -1,3 +1,70 @@
+.premium,
+.sport,
+.suv,
+.buisnes,
+.reserv,
+.auth {
+  background: linear-gradient(45deg, #4242427d, #4242427d),
+    url('../../image/premium.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 240px;
+  border-radius: 25%;
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration: none;
+}
+.sport {
+  background: linear-gradient(45deg, #4242427d, #4242427d),
+    url('../../image/sportCar.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.suv {
+  background: linear-gradient(45deg, #4242427d, #4242427d),
+    url('../../image/suvCar.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.buisnes {
+  background: linear-gradient(45deg, #4242427d, #4242427d),
+    url('../../image/BuisinesCar.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.reserv {
+  background: linear-gradient(45deg, #4242427d, #4242427d),
+    url('../../image/booking-software.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.auth {
+  background: linear-gradient(45deg, #4242427d, #4242427d),
+    url('../../image/rent-a-car-goldcar-code.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.introduce {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
 .listTopCar {
   overflow: hidden;
   display: flex;
