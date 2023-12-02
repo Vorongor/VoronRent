@@ -193,8 +193,15 @@
 }
 @media screen and (min-width: 768px) {
   .imgTopBox {
+    width: 420px;
+    height: 360px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .imgTopBox {
     width: 720px;
-    height: 480px;
+    height: 420px;
   }
   .imgTopBox::before {
     content: '';

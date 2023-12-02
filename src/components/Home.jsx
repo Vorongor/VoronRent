@@ -72,9 +72,9 @@ function Home() {
         <Link to={'/catalog'} className={homeStyle.reserv}>
           Booking and renting a car without registration
         </Link>
-        <p className={homeStyle.auth}>
+        <Link to={'/auth'} className={homeStyle.auth}>
           10% discount on the first trip upon registration
-        </p>
+        </Link>
       </div>
       {carData.length > 0 ? (
         <div>

@@ -3,6 +3,7 @@ import { Rings } from 'react-loader-spinner';
 import React, { Suspense, lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import ErrorPage from './ErrorPage';
+import AuthPage from './AuthPage';
 
 const Layout = lazy(() => import('./Layout'));
 const Home = lazy(() => import('./Home'));
@@ -47,6 +48,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="/catalog" element={<Catalog />} />
             <Route path="/favorite" element={<Favorite />} />
+            <Route path="/auth" element={<AuthPage />} />
             <Route path="/error" element={<ErrorPage />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Route>

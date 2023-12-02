@@ -19,6 +19,13 @@
   font-weight: 700;
   line-height: 1.2;
 }
+.catalogList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
 /* =========card========= */
 .carCard {
   position: relative;

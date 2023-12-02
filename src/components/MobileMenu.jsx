@@ -62,7 +62,7 @@ function MobileMenu({ closeMenu }) {
         }
         to={'/'}
       >
-        123
+        Authorization
       </Link>
     </div>
   );
