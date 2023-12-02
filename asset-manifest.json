@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/VoronRent/static/css/main.e574052f.css",
-    "main.js": "/VoronRent/static/js/main.da7a3f5f.js",
-    "static/css/685.e1525cbb.chunk.css": "/VoronRent/static/css/685.e1525cbb.chunk.css",
-    "static/js/685.2cdfbc39.chunk.js": "/VoronRent/static/js/685.2cdfbc39.chunk.js",
-    "static/css/74.79442344.chunk.css": "/VoronRent/static/css/74.79442344.chunk.css",
-    "static/js/74.8af6458f.chunk.js": "/VoronRent/static/js/74.8af6458f.chunk.js",
-    "static/css/364.bafc9db4.chunk.css": "/VoronRent/static/css/364.bafc9db4.chunk.css",
+    "main.js": "/VoronRent/static/js/main.85289966.js",
+    "static/css/685.f2298bb0.chunk.css": "/VoronRent/static/css/685.f2298bb0.chunk.css",
+    "static/js/685.1448f986.chunk.js": "/VoronRent/static/js/685.1448f986.chunk.js",
+    "static/css/74.0b72d70b.chunk.css": "/VoronRent/static/css/74.0b72d70b.chunk.css",
+    "static/js/74.96f5fe45.chunk.js": "/VoronRent/static/js/74.96f5fe45.chunk.js",
+    "static/css/364.99c44cbe.chunk.css": "/VoronRent/static/css/364.99c44cbe.chunk.css",
     "static/js/364.ffe24c1b.chunk.js": "/VoronRent/static/js/364.ffe24c1b.chunk.js",
-    "static/css/606.0596b08a.chunk.css": "/VoronRent/static/css/606.0596b08a.chunk.css",
+    "static/css/606.5dd28ea4.chunk.css": "/VoronRent/static/css/606.5dd28ea4.chunk.css",
     "static/js/606.4f870085.chunk.js": "/VoronRent/static/js/606.4f870085.chunk.js",
     "static/js/567.f065a57d.chunk.js": "/VoronRent/static/js/567.f065a57d.chunk.js",
     "static/js/804.34f73592.chunk.js": "/VoronRent/static/js/804.34f73592.chunk.js",
-    "static/js/297.2b222e56.chunk.js": "/VoronRent/static/js/297.2b222e56.chunk.js",
+    "static/js/297.b8751211.chunk.js": "/VoronRent/static/js/297.b8751211.chunk.js",
     "static/media/suvCar.jpg": "/VoronRent/static/media/suvCar.ac4a3850a83f2a25b7b8.jpg",
     "static/media/sportCar.jpg": "/VoronRent/static/media/sportCar.449b5eff7af519b41609.jpg",
     "static/media/BuisinesCar.jpg": "/VoronRent/static/media/BuisinesCar.4f957092a647be93dc21.jpg",
@@ -21,21 +21,21 @@
     "static/media/booking-software.jpg": "/VoronRent/static/media/booking-software.f6454f314db31051e906.jpg",
     "index.html": "/VoronRent/index.html",
     "main.e574052f.css.map": "/VoronRent/static/css/main.e574052f.css.map",
-    "main.da7a3f5f.js.map": "/VoronRent/static/js/main.da7a3f5f.js.map",
-    "685.e1525cbb.chunk.css.map": "/VoronRent/static/css/685.e1525cbb.chunk.css.map",
-    "685.2cdfbc39.chunk.js.map": "/VoronRent/static/js/685.2cdfbc39.chunk.js.map",
-    "74.79442344.chunk.css.map": "/VoronRent/static/css/74.79442344.chunk.css.map",
-    "74.8af6458f.chunk.js.map": "/VoronRent/static/js/74.8af6458f.chunk.js.map",
-    "364.bafc9db4.chunk.css.map": "/VoronRent/static/css/364.bafc9db4.chunk.css.map",
+    "main.85289966.js.map": "/VoronRent/static/js/main.85289966.js.map",
+    "685.f2298bb0.chunk.css.map": "/VoronRent/static/css/685.f2298bb0.chunk.css.map",
+    "685.1448f986.chunk.js.map": "/VoronRent/static/js/685.1448f986.chunk.js.map",
+    "74.0b72d70b.chunk.css.map": "/VoronRent/static/css/74.0b72d70b.chunk.css.map",
+    "74.96f5fe45.chunk.js.map": "/VoronRent/static/js/74.96f5fe45.chunk.js.map",
+    "364.99c44cbe.chunk.css.map": "/VoronRent/static/css/364.99c44cbe.chunk.css.map",
     "364.ffe24c1b.chunk.js.map": "/VoronRent/static/js/364.ffe24c1b.chunk.js.map",
-    "606.0596b08a.chunk.css.map": "/VoronRent/static/css/606.0596b08a.chunk.css.map",
+    "606.5dd28ea4.chunk.css.map": "/VoronRent/static/css/606.5dd28ea4.chunk.css.map",
     "606.4f870085.chunk.js.map": "/VoronRent/static/js/606.4f870085.chunk.js.map",
     "567.f065a57d.chunk.js.map": "/VoronRent/static/js/567.f065a57d.chunk.js.map",
     "804.34f73592.chunk.js.map": "/VoronRent/static/js/804.34f73592.chunk.js.map",
-    "297.2b222e56.chunk.js.map": "/VoronRent/static/js/297.2b222e56.chunk.js.map"
+    "297.b8751211.chunk.js.map": "/VoronRent/static/js/297.b8751211.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e574052f.css",
-    "static/js/main.da7a3f5f.js"
+    "static/js/main.85289966.js"
   ]
 }
