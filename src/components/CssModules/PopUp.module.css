@@ -1,117 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap');
-
-.backGround {
-  text-align: center;
-  width: 100vw;
-  height: 100vh;
-  /* background: linear-gradient(0deg, #ffffff93, #8a8a8993),
-    url('../image/pngtree-white-background-with-blue-abstract-smoke-on-top-image_312166.jpg');
-  background-repeat: no-repeat;
-  background-size: cover; */
-}
-.title {
-  margin: 20px 0;
-  text-align: center;
-  width: 100%;
-  color: #0b44cd;
-  font-family: 'Manrope';
-  font-size: 46px;
-  font-weight: 700;
-  line-height: 1.2;
-}
-/* =========card========= */
-.carCard {
-  position: relative;
-  display: flex;
-  width: 274px;
-  height: 460px;
-  flex-direction: column;
-  align-items: center;
-}
-.heart {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background-color: transparent;
-  border: none;
-  scale: 1;
-  transition: all 250ms ease-in-out;
-}
-.heart:hover {
-  cursor: pointer;
-  scale: 1.2;
-}
-.itemImg {
-  text-align: center;
-  width: 274px;
-  height: 268px;
-  border-radius: 14px;
-  background: linear-gradient(
-      180deg,
-      rgba(18, 20, 23, 0.5) 2.5%,
-      rgba(18, 20, 23, 0) 41.07%
-    ),
-    #f3f3f2;
-}
-.topBox {
-  padding: 12px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.topText {
-  color: #121417;
-  font-family: 'Manrope';
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 24px;
-}
-.blue {
-  color: #3470ff;
-}
-.botBox {
-  color: rgba(18, 20, 23, 0.5);
-  font-family: 'Manrope';
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-.botTip {
-  box-sizing: border-box;
-  display: inline-block;
-  padding: 0 8px;
-  border-right: 1px solid #1214171a;
-}
-.botBox:last-child.botTip {
-  border-right: none;
-}
-.rentBtn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  margin-top: 28px;
-  width: 274px;
-  height: 44px;
-  border-radius: 12px;
-  color: #fff;
-  background: #3470ff;
-  border: none;
-  transition: all 250ms ease-in-out;
-}
-.rentBtn:hover {
-  cursor: pointer;
-  background-color: #0b44cd;
-}
 /* =============popup================== */
 .backDrop {
   position: fixed;
@@ -121,23 +7,24 @@
   left: 0;
   z-index: 15;
   background-color: #12141776;
+  overflow-y: scroll;
 }
 .modalWindow {
   position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   box-sizing: border-box;
-
-  padding: 40px;
-  width: 541px;
-  height: 752px;
+  width: 100%;
+  height: auto;
+  padding: 50px 10px;
   border-radius: 24px;
   background: #fff;
+  gap: 10px;
+  overflow: scroll;
 }
 .close {
   position: absolute;
@@ -201,6 +88,85 @@
   line-height: 1.2;
   letter-spacing: -0.24px;
 }
+
+.topBox {
+  padding: 12px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.topText {
+  color: #121417;
+  font-family: 'Manrope';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
+.blue {
+  color: #3470ff;
+}
+.botBox {
+  color: rgba(18, 20, 23, 0.5);
+  font-family: 'Manrope';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.botTip {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 0 8px;
+  border-right: 1px solid #1214171a;
+}
+.botBox:last-child.botTip {
+  border-right: none;
+}
+.rentBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin-top: 28px;
+  width: 274px;
+  height: 44px;
+  border-radius: 12px;
+  color: #fff;
+  background: #3470ff;
+  border: none;
+  transition: all 250ms ease-in-out;
+}
+.rentBtn:hover {
+  cursor: pointer;
+  background-color: #0b44cd;
+}
+.reservbtn {
+  margin: 20px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: #3470ff;
+  font-family: 'Manrope';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  text-decoration-line: underline;
+}
+.btnBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* ============Order Windiw============== */
 
 .calendarBox {
@@ -331,4 +297,20 @@
 .infoTable tr:hover {
   background-color: #0b44cd;
   color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .modalWindow {
+    padding: 40px;
+    width: 541px;
+    height: 752px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .btnBox {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+  }
 }

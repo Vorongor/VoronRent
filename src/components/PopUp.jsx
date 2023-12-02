@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import style from './App.module.css';
+import style from './CssModules/PopUp.module.css';
 import IconCloseCircle from './SVG/CloseSvg';
 import OrderWindow from './OrderWindow';
 
@@ -129,7 +129,7 @@ function PopUp({ car, closeFunc }) {
               </span>
             </li>
           </ul>
-          <div style={{ display: 'flex', alignItems: 'baseline' }}>
+          <div className={style.btnBox}>
             <a
               className={style.rentBtn}
               href="tel:+380730000000"
@@ -138,7 +138,7 @@ function PopUp({ car, closeFunc }) {
               Rental car
             </a>
             <button
-              className={style.loadMore}
+              className={style.reservbtn}
               type="button"
               onClick={() => handleButtonRent(car)}
             >
