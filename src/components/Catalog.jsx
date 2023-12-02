@@ -24,10 +24,6 @@ function Ctalog() {
     dispatch(fetchCarData(page));
   }, [dispatch, page]);
 
-  const cancelSearch = () => {
-    setSearch(false);
-  };
-
   const handleOptionChange = e => {
     setSelectedOption(e.target.value);
   };
