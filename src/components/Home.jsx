@@ -8,6 +8,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import style from './App.module.css';
+import homeStyle from './CssModules/Home.module.css';
 import PopUp from './PopUp';
 
 function Home() {
@@ -32,6 +33,18 @@ function Home() {
   const rentalCompany = useSelector(state => state.car.rentalCompany);
   const randomCar = getRandomNumber(2, 10);
 
+  const breakpoints = {
+    320: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    992: {
+      slidesPerView: 3,
+    },
+  };
+
   const topData = [
     carData[randomCar],
     carData[randomCar + 1],
@@ -41,11 +54,20 @@ function Home() {
   ];
   return (
     <div>
+      <div className={homeStyle.introduce}>
+        <h2 className={style.title}>Our services</h2>
+        <p>Daily rental of premium cars</p>
+        <p>daily rental of sports cars</p>
+        <p>daily rental of SUVs</p>
+        <p>daily business class car rental</p>
+        <p>Booking and renting a car without registration</p>
+        <p>10% discount on the first trip upon registration</p>
+      </div>
       {carData.length > 0 ? (
         <div>
           <h2 className={style.title}>Top Car of Week</h2>
           {carData.length > 0 && (
-            <ul className={style.listTopCar}>
+            <ul className={homeStyle.listTopCar}>
               <Swiper
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
                 spaceBetween={50}
@@ -53,6 +75,7 @@ function Home() {
                 navigation
                 loop={true}
                 scrollbar={{ draggable: true }}
+                breakpoints={breakpoints}
               >
                 {topData.map((item, index) => {
                   return (
@@ -69,10 +92,10 @@ function Home() {
         <div>Loading</div>
       )}
       {rentalCompany && (
-        <ul className={style.companyList}>
+        <ul className={homeStyle.companyList}>
           <h2 className={style.title}>Ouer Partner Rental Company</h2>
           {rentalCompany.map(item => (
-            <li key={item} className={style.rentCompany}>
+            <li key={item} className={homeStyle.rentCompany}>
               {item}
             </li>
           ))}

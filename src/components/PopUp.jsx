@@ -27,8 +27,15 @@ function PopUp({ car, closeFunc }) {
     return address;
   };
 
-  function handleButtonRent(car) {
+  function formatMileage(mileage) {
+    return mileage.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+
+  function handleButtonRent() {
     setOrder(true);
+  }
+  function handleButtonCall() {
+    console.log('Calling the car rental company...');
   }
   function parseRentalConditions(inputString) {
     const regex = /Minimum age: (\d+)\s+Valid driver's license\s+(.*)/;
@@ -55,6 +62,7 @@ function PopUp({ car, closeFunc }) {
       closeFunc();
     }
   }
+
   return (
     <div className={style.backDrop} onClick={backDropClose}>
       {!order ? (
@@ -111,7 +119,7 @@ function PopUp({ car, closeFunc }) {
             <li className={style.popLi}>
               Mileage:
               <span style={{ color: '#3470ff', fontWeight: 'bold' }}>
-                {car.mileage}
+                {formatMileage(car.mileage)}
               </span>
             </li>
             <li className={style.popLi}>
@@ -121,13 +129,22 @@ function PopUp({ car, closeFunc }) {
               </span>
             </li>
           </ul>
-          <button
-            className={style.rentBtn}
-            type="button"
-            onClick={() => handleButtonRent(car)}
-          >
-            Rental car
-          </button>
+          <div style={{ display: 'flex', alignItems: 'baseline' }}>
+            <a
+              className={style.rentBtn}
+              href="tel:+380730000000"
+              onClick={handleButtonCall}
+            >
+              Rental car
+            </a>
+            <button
+              className={style.loadMore}
+              type="button"
+              onClick={() => handleButtonRent(car)}
+            >
+              Reserve car
+            </button>
+          </div>
         </div>
       ) : (
         <div className={style.modalWindow}>

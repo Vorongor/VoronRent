@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchCarData } from './operation';
+import { fetchCarData, fetchSearchData } from './operation';
 
 const initialState = {
   carData: [],
+  searchData: [],
   makes: [],
   prices: [],
   favoriteCars: [],
@@ -63,7 +64,12 @@ export const carSlice = createSlice({
         state.prices = action.payload.prices;
         state.rentalCompany = action.payload.rentalCompany;
       })
-      .addCase(fetchCarData.rejected, handleRejected);
+      .addCase(fetchCarData.rejected, handleRejected)
+      .addCase(fetchSearchData.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.searchData = action.payload.data;
+      });
   },
 });
 

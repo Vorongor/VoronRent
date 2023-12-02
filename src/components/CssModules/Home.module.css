@@ -1,0 +1,148 @@
+.listTopCar {
+  overflow: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.rentCompany {
+  list-style: none;
+  display: flex;
+  padding: 14px 21px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 35px;
+  background: #f9f9f9;
+  color: #363535;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: -0.24px;
+  transition: all 250ms ease-in-out;
+}
+
+.rentCompany:hover {
+  scale: 1.1;
+  background: #3470ff;
+  color: #f9f9f9;
+}
+
+.companyList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==============Top Car Item============ */
+
+.topCard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.imgTopBox {
+  width: 320px;
+  height: 240px;
+  background-color: #8a8a89;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.imgTopBox::before {
+  content: '';
+  width: 160px;
+  height: 160px;
+  transform: rotate(60deg);
+  background-color: #3470ff;
+  position: absolute;
+  top: -100px;
+  left: -70px;
+  z-index: 10;
+  border-radius: 50%;
+}
+.imgTopBox::after {
+  content: '';
+  width: 160px;
+  height: 160px;
+  transform: rotate(60deg);
+  background-color: #3470ff;
+  position: absolute;
+  bottom: -100px;
+  right: -70px;
+  z-index: 10;
+  border-radius: 50%;
+}
+.topImg {
+  width: 100%;
+  height: 100%;
+}
+.topPrice {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 15;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5;
+  color: whitesmoke;
+}
+.topName {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 15;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5;
+  color: whitesmoke;
+}
+.rentBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin-top: 28px;
+  width: 274px;
+  height: 44px;
+  border-radius: 12px;
+  color: #fff;
+  background: #3470ff;
+  border: none;
+  transition: all 250ms ease-in-out;
+}
+.rentBtn:hover {
+  cursor: pointer;
+  background-color: #0b44cd;
+}
+@media screen and (min-width: 768px) {
+  .imgTopBox {
+    width: 720px;
+    height: 480px;
+  }
+  .imgTopBox::before {
+    content: '';
+    width: 200px;
+    height: 200px;
+  }
+  .imgTopBox::after {
+    content: '';
+    width: 200px;
+    height: 200px;
+  }
+  .topPrice {
+    font-size: 36px;
+  }
+  .topName {
+    font-size: 36px;
+  }
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './App.module.css';
+import style from './CssModules/Home.module.css';
 
 function TopCarItem({ car, chooseCar }) {
   return (

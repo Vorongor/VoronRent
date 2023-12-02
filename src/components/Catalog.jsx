@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import CatalogItem from './CatalogItem';
 import { fetchCarData, fetchSearchData } from '../redux/operation';
-import style from './App.module.css';
+import style from './CssModules/Catalog.module.css';
 import PopUp from './PopUp';
 
 function Ctalog() {
   const dispatch = useDispatch();
 
   const carData = useSelector(state => state.car.carData);
+  const searchData = useSelector(state => state.car.searchData);
   const maxSize = useSelector(state => state.car.maxSize);
 
   const [selectedOption, setSelectedOption] = useState('');
@@ -17,10 +18,15 @@ function Ctalog() {
   const [milageTo, setMilageTo] = useState('');
   const [selectedCar, setSelectedCar] = useState(null);
   const [page, setPage] = useState(1);
+  const [search, setSearch] = useState(false);
 
   useEffect(() => {
     dispatch(fetchCarData(page));
   }, [dispatch, page]);
+
+  const cancelSearch = () => {
+    setSearch(false);
+  };
 
   const handleOptionChange = e => {
     setSelectedOption(e.target.value);
@@ -78,6 +84,15 @@ function Ctalog() {
       query.milageTo = milageTo;
     }
     dispatch(fetchSearchData(query));
+    if (search) {
+      setSearch(false);
+      setSelectedOption('');
+      setSelectedPrice('');
+      setMilageFrom('');
+      setMilageTo('');
+    } else {
+      setSearch(true);
+    }
   }
 
   return (
@@ -121,7 +136,7 @@ function Ctalog() {
         </label>
         <label className={style.labelKm}>
           Car mileage / km
-          <div style={{ display: 'flex' }}>
+          <div className={style.imputBox}>
             <input
               className={style.kmSelect}
               type="text"
@@ -139,15 +154,19 @@ function Ctalog() {
           </div>
         </label>
         <button className={style.search} type="submit">
-          Search
+          {search ? 'Cancel' : 'Search'}
         </button>
       </form>
 
       {carData.length > 0 && (
         <ul className={style.catalogList}>
-          {carData.map((item, index) => (
-            <CatalogItem key={index} car={item} chooseCar={handleChoose} />
-          ))}
+          {!search
+            ? carData.map((item, index) => (
+                <CatalogItem key={index} car={item} chooseCar={handleChoose} />
+              ))
+            : searchData.map((item, index) => (
+                <CatalogItem key={index} car={item} chooseCar={handleChoose} />
+              ))}
         </ul>
       )}
 

@@ -1,0 +1,147 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #0b44cd;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #fff;
+  font-family: 'Manrope';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  text-decoration: none;
+}
+.carIcon,
+.homeIcon {
+  scale: 2.2;
+}
+.menu {
+  display: none;
+}
+.burger {
+  background-color: transparent;
+  border: none;
+  color: #f3f3f3;
+  scale: 1.5;
+}
+@media screen and (min-width: 768px) {
+  .menu {
+    display: flex;
+    gap: 20px;
+  }
+  .burger {
+    display: none;
+  }
+}
+
+.link {
+  box-sizing: border-box;
+  width: 92px;
+  height: 36px;
+  color: #f3f3f2;
+  border: none;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  padding: 8px;
+  font-family: 'Manrope';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+  transition: all 250ms ease-in-out;
+}
+.link:hover,
+.link:focus {
+  cursor: pointer;
+  background-color: #f3f3f2;
+  color: #3470ff;
+  scale: 1.1;
+}
+.activeLink {
+  box-sizing: border-box;
+  width: 92px;
+  height: 36px;
+  color: #3470ff;
+  background-color: #f3f3f2;
+  border: none;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  padding: 8px;
+  font-family: 'Manrope';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+}
+
+/* =============mobile menu============= */
+
+.mobileMenu {
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 36px;
+  align-items: flex-start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  width: 100%;
+  height: 100%;
+  background-color: #3470ff;
+  color: #f3f3f2;
+}
+
+.mobileLink {
+  display: flex;
+  background-color: #0b44cd;
+  box-sizing: border-box;
+  width: 200px;
+  height: 60px;
+  border-radius: 20px;
+  color: #f3f3f2;
+  text-decoration: none;
+  padding: 8px;
+  font-family: 'Manrope';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+  justify-content: center;
+  align-items: center;
+}
+.activemobileLink {
+  display: flex;
+  background-color: #f3f3f2;
+  box-sizing: border-box;
+  width: 200px;
+  height: 60px;
+  border-radius: 20px;
+  color: #0b44cd;
+  text-decoration: none;
+  padding: 8px;
+  font-family: 'Manrope';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+  justify-content: center;
+  align-items: center;
+}
+.mobileClose {
+  color: #f3f3f2;
+  background-color: transparent;
+  border: none;
+  scale: 1.6;
+}

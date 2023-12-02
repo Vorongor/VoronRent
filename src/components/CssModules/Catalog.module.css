@@ -1,0 +1,115 @@
+/* =========catalog =========== */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin: 50px;
+}
+.imputBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.labelKm,
+.labelMark,
+.labelPrise {
+  display: flex;
+  flex-direction: column;
+  color: #8a8a89;
+  font-family: 'Manrope';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  gap: 8px;
+}
+.labelMark {
+  width: 224px;
+}
+.labelPrise {
+  width: 125px;
+}
+.labelKm {
+  width: 320px;
+}
+.markSelect,
+.priseSelect {
+  height: 48px;
+  box-sizing: border-box;
+  padding: 8px;
+  border-radius: 14px;
+  background: #f7f7fb;
+  border: none;
+}
+.kmSelect {
+  width: 160px;
+  height: 48px;
+  box-sizing: border-box;
+  padding: 8px;
+  border-radius: 14px;
+  background: #f7f7fb;
+  border: none;
+}
+.search {
+  border: none;
+  width: 136px;
+  height: 48px;
+  border-radius: 12px;
+  background: #3470ff;
+  color: #fff;
+  transition: all 250ms ease-in-out;
+}
+.search:hover {
+  background-color: #0b44cd;
+}
+.catalogList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 29px;
+}
+.loadMore {
+  margin: 20px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: #3470ff;
+  font-family: 'Manrope';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  text-decoration-line: underline;
+}
+.loadMoreDisable {
+  margin: 20px;
+  cursor: not-allowed;
+  border: none;
+  background-color: transparent;
+  color: #8a8a89;
+  font-family: 'Manrope';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  text-decoration-line: underline;
+}
+
+@media screen and (min-width: 768px) {
+  .form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .imputBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
