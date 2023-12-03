@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import style from './CssModules/PopUp.module.css';
 import IconCloseCircle from './SVG/CloseSvg';
 import OrderWindow from './OrderWindow';
+import { useSelector } from 'react-redux';
 
 function PopUp({ car, closeFunc }) {
   const [order, setOrder] = useState(false);
+  const isLoggedIn = useSelector(state => state.car.isloggedIn);
 
   useEffect(() => {
     const handleEscKey = event => {
@@ -137,13 +139,15 @@ function PopUp({ car, closeFunc }) {
             >
               Rental car
             </a>
-            <button
-              className={style.reservbtn}
-              type="button"
-              onClick={() => handleButtonRent(car)}
-            >
-              Reserve car
-            </button>
+            {isLoggedIn && (
+              <button
+                className={style.reservbtn}
+                type="button"
+                onClick={() => handleButtonRent(car)}
+              >
+                Reserve car
+              </button>
+            )}
           </div>
         </div>
       ) : (

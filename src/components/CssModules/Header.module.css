@@ -83,6 +83,9 @@
   font-weight: 700;
   line-height: 18px;
 }
+.login {
+  scale: 1.5;
+}
 
 /* =============mobile menu============= */
 

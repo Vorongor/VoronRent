@@ -1,5 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchCarData, fetchSearchData } from './operation';
+import {
+  fetchCarData,
+  fetchSearchData,
+  logIn,
+  logOut,
+  register,
+} from './operation';
 
 const initialState = {
   carData: [],
@@ -7,6 +13,8 @@ const initialState = {
   makes: [],
   prices: [],
   favoriteCars: [],
+  user: {},
+  token: '',
   maxSize: 12,
   startTime: '',
   finishTime: '',
@@ -14,6 +22,7 @@ const initialState = {
   isLoading: false,
   filter: '',
   error: null,
+  isloggedIn: false,
 };
 
 const handlePending = state => {
@@ -65,10 +74,34 @@ export const carSlice = createSlice({
         state.rentalCompany = action.payload.rentalCompany;
       })
       .addCase(fetchCarData.rejected, handleRejected)
+      .addCase(fetchSearchData.pending, handlePending)
       .addCase(fetchSearchData.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         state.searchData = action.payload.data;
+      })
+      .addCase(fetchSearchData.rejected, handleRejected)
+      .addCase(register.pending, handlePending)
+      .addCase(register.fulfilled, (state, action) => {
+        state.user = action.payload.user;
+        state.token = action.payload.token;
+        state.isloggedIn = true;
+      })
+      .addCase(register.rejected, handleRejected)
+      .addCase(logIn.pending, handlePending)
+      .addCase(logIn.fulfilled, (state, action) => {
+        state.user = action.payload.user;
+        state.token = action.payload.token;
+        state.isloggedIn = true;
+      })
+      .addCase(logIn.rejected, handleRejected)
+      .addCase(logOut.pending, handlePending)
+      .addCase(logOut.fulfilled, (state, action) => {
+        state.user = action.payload.user;
+        state.isloggedIn = false;
+      })
+      .addCase(logOut.rejected, state => {
+        state.isloggedIn = false;
       });
   },
 });
@@ -81,4 +114,5 @@ export const {
   removeFavorite,
   setStart,
   setFinish,
+  togleLogin,
 } = carSlice.actions;
