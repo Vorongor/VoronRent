@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/VoronRent/static/css/main.2e8e0b63.css",
-    "main.js": "/VoronRent/static/js/main.2c4bf3cc.js",
+    "main.js": "/VoronRent/static/js/main.b7a736b7.js",
     "static/css/762.8c877321.chunk.css": "/VoronRent/static/css/762.8c877321.chunk.css",
     "static/js/762.c965e7ba.chunk.js": "/VoronRent/static/js/762.c965e7ba.chunk.js",
     "static/css/74.0b72d70b.chunk.css": "/VoronRent/static/css/74.0b72d70b.chunk.css",
@@ -13,7 +13,7 @@
     "static/js/785.c4c94f53.chunk.js": "/VoronRent/static/js/785.c4c94f53.chunk.js",
     "static/js/804.34f73592.chunk.js": "/VoronRent/static/js/804.34f73592.chunk.js",
     "static/js/686.8eeea0d2.chunk.js": "/VoronRent/static/js/686.8eeea0d2.chunk.js",
-    "static/js/297.196206e4.chunk.js": "/VoronRent/static/js/297.196206e4.chunk.js",
+    "static/js/297.68761751.chunk.js": "/VoronRent/static/js/297.68761751.chunk.js",
     "static/media/suvCar.jpg": "/VoronRent/static/media/suvCar.ac4a3850a83f2a25b7b8.jpg",
     "static/media/sportCar.jpg": "/VoronRent/static/media/sportCar.449b5eff7af519b41609.jpg",
     "static/media/BuisinesCar.jpg": "/VoronRent/static/media/BuisinesCar.4f957092a647be93dc21.jpg",
@@ -22,7 +22,7 @@
     "static/media/booking-software.jpg": "/VoronRent/static/media/booking-software.f6454f314db31051e906.jpg",
     "index.html": "/VoronRent/index.html",
     "main.2e8e0b63.css.map": "/VoronRent/static/css/main.2e8e0b63.css.map",
-    "main.2c4bf3cc.js.map": "/VoronRent/static/js/main.2c4bf3cc.js.map",
+    "main.b7a736b7.js.map": "/VoronRent/static/js/main.b7a736b7.js.map",
     "762.8c877321.chunk.css.map": "/VoronRent/static/css/762.8c877321.chunk.css.map",
     "762.c965e7ba.chunk.js.map": "/VoronRent/static/js/762.c965e7ba.chunk.js.map",
     "74.0b72d70b.chunk.css.map": "/VoronRent/static/css/74.0b72d70b.chunk.css.map",
@@ -34,10 +34,10 @@
     "785.c4c94f53.chunk.js.map": "/VoronRent/static/js/785.c4c94f53.chunk.js.map",
     "804.34f73592.chunk.js.map": "/VoronRent/static/js/804.34f73592.chunk.js.map",
     "686.8eeea0d2.chunk.js.map": "/VoronRent/static/js/686.8eeea0d2.chunk.js.map",
-    "297.196206e4.chunk.js.map": "/VoronRent/static/js/297.196206e4.chunk.js.map"
+    "297.68761751.chunk.js.map": "/VoronRent/static/js/297.68761751.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2e8e0b63.css",
-    "static/js/main.2c4bf3cc.js"
+    "static/js/main.b7a736b7.js"
   ]
 }
