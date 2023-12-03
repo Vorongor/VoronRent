@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import style from './App.module.css';
 import DatePickerDialog from './DatePickerDialog';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import IconArrowGoBackFill from './SVG/BackArrov';
 import IconTelephoneInboundFill from './SVG/PhoneSvg';
 import IconBxlTelegram from './SVG/TelegramSvg';
@@ -9,8 +9,10 @@ import IconMail from './SVG/MailSvg';
 import IconChatDots from './SVG/ChatSvg';
 import { nanoid } from 'nanoid';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { addOrder } from 'redux/operation';
 
 export default function OrderWindow({ car, closeFunc }) {
+  const dispatch = useDispatch();
   const [client, setClient] = useState(null);
   const [wayToConect, setWayToConect] = useState(null);
   const [phoneNumber, setPhoneNumber] = useState(null);
@@ -33,7 +35,11 @@ export default function OrderWindow({ car, closeFunc }) {
         finishTime,
         carId: car._id,
       };
-      console.log(order);
+      dispatch(addOrder(order));
+      console.log(
+        '🚀 ~ file: OrderWindow.jsx:39 ~ handleConfirm ~ order:',
+        order
+      );
       closeFunc();
     } else {
       if (!client) {

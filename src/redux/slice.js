@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
+  addOrder,
   fetchCarData,
   fetchSearchData,
   logIn,
@@ -102,7 +103,12 @@ export const carSlice = createSlice({
       })
       .addCase(logOut.rejected, state => {
         state.isloggedIn = false;
-      });
+      })
+      .addCase(addOrder.pending, handlePending)
+      .addCase(addOrder.fulfilled, (state, action) => {
+        state.isloggedIn = true;
+      })
+      .addCase(addOrder.rejected, handleRejected);
   },
 });
 

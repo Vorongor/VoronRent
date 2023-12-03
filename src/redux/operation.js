@@ -71,3 +71,17 @@ export const fetchSearchData = createAsyncThunk(
     }
   }
 );
+
+export const addOrder = createAsyncThunk(
+  '/car/order',
+  async (order, thunkAPI) => {
+    const token = thunkAPI.getState().user.token;
+    try {
+      setAuthHeader(token);
+      const res = await axios.post('/car/order', order);
+      return res;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
