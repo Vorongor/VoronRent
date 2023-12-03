@@ -28,11 +28,11 @@ export default function OrderWindow({ car, closeFunc }) {
       startTime < finishTime
     ) {
       const order = {
-        orderNumber,
+        orderNumber: `${orderNumber}`,
         client: client,
-        conect: `${wayToConect}: ${phoneNumber}`,
-        startTime,
-        finishTime,
+        contact: `${wayToConect}: ${phoneNumber}`,
+        startTime: startTime,
+        finishTime: finishTime,
         carId: car._id,
       };
       dispatch(addOrder(order));

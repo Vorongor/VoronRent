@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
-  addOrder,
+  deleteOrder,
   fetchCarData,
+  fetchOrders,
   fetchSearchData,
   logIn,
   logOut,
@@ -14,6 +15,7 @@ const initialState = {
   makes: [],
   prices: [],
   favoriteCars: [],
+  orders: [],
   user: {},
   token: '',
   maxSize: 12,
@@ -104,11 +106,18 @@ export const carSlice = createSlice({
       .addCase(logOut.rejected, state => {
         state.isloggedIn = false;
       })
-      .addCase(addOrder.pending, handlePending)
-      .addCase(addOrder.fulfilled, (state, action) => {
+      .addCase(fetchOrders.pending, handlePending)
+      .addCase(fetchOrders.fulfilled, (state, action) => {
+        state.orders = action.payload;
         state.isloggedIn = true;
       })
-      .addCase(addOrder.rejected, handleRejected);
+      .addCase(fetchOrders.rejected, handleRejected)
+      .addCase(deleteOrder.fulfilled, (state, action) => {
+        const deletedId = action.payload._id;
+        state.orders = state.orders.filter(
+          product => product._id !== deletedId
+        );
+      });
   },
 });
 

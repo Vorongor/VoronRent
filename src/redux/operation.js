@@ -72,14 +72,42 @@ export const fetchSearchData = createAsyncThunk(
   }
 );
 
-export const addOrder = createAsyncThunk(
-  '/car/order',
-  async (order, thunkAPI) => {
-    const token = thunkAPI.getState().user.token;
+export const addOrder = createAsyncThunk('car/add', async (data, thunkAPI) => {
+  try {
+    const state = thunkAPI.getState();
+    const storedToken = state.car.token;
+    setAuthHeader(storedToken);
+    const res = await axios.post('/car/add', data);
+    return res.data.result;
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.message);
+  }
+});
+
+export const fetchOrders = createAsyncThunk(
+  'car/order',
+  async (_, thunkAPI) => {
     try {
-      setAuthHeader(token);
-      const res = await axios.post('/car/order', order);
-      return res;
+      const state = thunkAPI.getState();
+      const storedToken = state.car.token;
+      setAuthHeader(storedToken);
+      const res = await axios.get('/car/order');
+      return res.data.orders;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const deleteOrder = createAsyncThunk(
+  'car/delete',
+  async (orderId, thunkAPI) => {
+    try {
+      const state = thunkAPI.getState();
+      const storedToken = state.car.token;
+      setAuthHeader(storedToken);
+      const res = await axios.delete(`/car/delete/${orderId}`);
+      return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

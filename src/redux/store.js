@@ -17,7 +17,7 @@ import { carReduser } from './slice';
 const persistConfig = {
   key: 'car',
   storage,
-  blacklist: ['startTime', 'finishTime'],
+  blacklist: ['startTime', 'finishTime', 'orders'],
 };
 
 const carPersistedReducer = persistReducer(persistConfig, carReduser);
